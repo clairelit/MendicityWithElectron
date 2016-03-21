@@ -2,20 +2,20 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 
-const mongoClient = require('mongodb').MongoClient;
-const monk = require('monk');
-const db = monk('localhost:27017/mendoPeopleList');
+var mongoClient = require('mongodb').MongoClient;
+var monk = require('monk');
+var db = monk('mongodb://localhost:27017/mendoPeopleList');
 
 
 // If I am running locally then use 'mongodb://localhost:27017/test' otherwise
 // look for the environment variable
-const url = process.env.CUSTOMCONNSTR_MongoDB || 'mongodb://localhost:27017/mendoPeopleList';
+var url = process.env.CUSTOMCONNSTR_MongoDB || 'mongodb://localhost:27017/mendoPeopleList';
 
 
 /* GET search page. */
 router.get('/searchpage', function(req, res, next) {
-    const db = req.db;
-    const collection = db.get('mendoPeopleList');
+    var db = req.db;
+    var collection = db.get('mendoPeopleList');
     collection.find({},{},function(e,docs){
       res.render('searchpage', {
         "resultsFromDB" : docs

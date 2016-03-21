@@ -16,6 +16,26 @@ const http = require('http');
 const port = normalizePort(process.env.PORT || '3000');
 var server;
 
+
+//Tells our app that we want to talk to MongoDB.
+var mongo = require('mongodb');
+var monk = require('monk');
+var db = monk('mongodb://localhost:27017/mendoPeopleList');
+
+// If I am running locally then use 'mongodb://localhost:27017/test' otherwise
+// look for the environment variable
+var url = process.env.CUSTOMCONNSTR_MongoDB || 'mongodb://localhost:27017/mendoPeopleList';
+
+/*
+ * Requiring the following package to be able to use sessions.
+ * Need sessions to be able to store user details
+ */
+const session = require('express-session');
+
+
+
+
+
 function normalizePort(val) {
   var port = parseInt(val, 10);
 
@@ -84,20 +104,6 @@ app.on('ready', function() {
   });
 
 
-//Tells our app that we want to talk to MongoDB.
-const mongo = require('mongodb');
-const monk = require('monk');
-const db = monk('mongodb://localhost:27017/mendoPeopleList');
-
-// If I am running locally then use 'mongodb://localhost:27017/test' otherwise
-// look for the environment variable
-const url = process.env.CUSTOMCONNSTR_MongoDB || 'mongodb://localhost:27017/mendoPeopleList';
-
-/*
- * Requiring the following package to be able to use sessions.
- * Need sessions to be able to store user details
- */
-const session = require('express-session');
 
 //Setting up the express app.  This must be put in before all middleware
 //var app = express();
@@ -177,4 +183,4 @@ server = http.createServer(expressApp);
     server.close();
   });
 });
-//module.exports = app;
+module.exports = expressApp;
