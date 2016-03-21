@@ -1,0 +1,22 @@
+{
+  "name": "mendicity-project",
+  "description": "Storing records from Transmission book in an app",
+  "main": "main.js",
+  "authors": [
+    "Claire Murray <clairefromcork@gmail.com>"
+  ],
+  "license": "GPL-3.0",
+  "homepage": "https://github.com/clairelit",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.1"
+  }
+}

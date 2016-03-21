@@ -1,0 +1,172 @@
+/*#landScapeDiv { display:block; }
+@media only screen and (orientation:portrait){
+  #container {
+    height: 100vw;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+@media only screen and (orientation:landscape){
+  #landScapeDiv {
+     -webkit-transform: rotate(0deg);
+     -moz-transform: rotate(0deg);
+     -o-transform: rotate(0deg);
+     -ms-transform: rotate(0deg);
+     transform: rotate(0deg);
+  }
+}
+*/
+/*body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+html, body, .container-table {
+    height: 100%;
+}
+.container-table {
+    display: table;
+}
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+a {
+  color: #00B7FF;
+}
+*/
+
+html,body {
+  font-family: "Bookman Old Style";
+  //color: #432d24;
+  color: #5c5a5a;
+  padding:0;
+  margin:0;
+  height:100%;
+  min-height:100%;
+  background-image: url(/images/Oldpaper.png);
+
+  font-weight: bold;
+ }
+
+ .fa{
+   color: #c19342
+ }
+
+ html, body, .container-table {
+     height: 100%;
+ }
+ .container-table {
+     display: table;
+ }
+ .vertical-center-row {
+     display: table-cell;
+     vertical-align: middle;
+ }
+
+.btnMoreInfo {
+  background: #f5f5dc;
+  color: black;
+  padding: 14px 24px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  border-width: thick;
+  border-color: #f4a460;
+}
+.aboutMendo{
+  margin-left:10px;
+  font-size:16px;
+  padding-left:10px;
+}
+
+.aboutTransBook{
+  margin-left:20px;
+  font-size:16px;
+  padding-left:20px;
+}
+
+.bkImg{
+  max-width:100%;
+  max-height:50%;
+  padding:10px;
+}
+
+.homeIcon{
+  margin-left: 10px;
+  float:left;
+}
+
+.quarterMendicity{
+  width:50%;
+  height:100%;
+  float:left;
+  background-image:  url(/images/paper.jpg);
+}
+
+.quarterTrans{
+  width:50%;
+  height:100%;
+  float:left;
+  background-image: url(/images/paper.jpg);
+}
+
+.quarterSearch{
+  width:50%;
+  height:100%;
+  float:left;
+  background-image: url(/images/paper.jpg);
+}
+
+.quarterContact{
+  width:50%;
+  height:100%;
+  float:left;
+  background-image: url(/images/paper.jpg);
+}
+
+.contents{
+  height:50%;
+  width:100%;
+}
+
+.linkStyle{
+  color:inherit;;
+  text-decoration:inherit;;
+}
+
+.innerDiv {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+
+
+
+
+.iconContainer{
+  min-height:50%;
+}
+
+.iconDiv{
+  margin-left:40%;
+  bottom:0;
+}
+
+.headingList{
+  margin-top:10px;
+  border:#cdcdcd solid;
+  padding:10px;
+}
+
+li{
+  list-style: none;
+}
+
+
+.namesList{
+//  border:#cdcdcd solid;
+}

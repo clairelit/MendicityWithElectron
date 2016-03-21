@@ -1,0 +1,87 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-theme.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+  .row
+    .col-xs-8
+      a(href='/homepage')
+        i.fa.fa-home.homeIcon.fa-5x
+      .col-xs-4
+  .row
+    .col-xs-3
+      form#custom-search-form.form-search.form-horizontal.pull-right
+          input.search-query.input-large(type='text', placeholder='Town')
+          button.btn(type='submit')
+            i.i.fa.fa-search.fa-1x
+    .col-xs-3
+      form#custom-search-form.form-search.form-horizontal.pull-right
+          input.search-query.input-large(type='text', placeholder='Country')
+          button.btn(type='submit')
+            i.i.fa.fa-search.fa-1x
+    .col-xs-3
+      form#custom-search-form.form-search.form-horizontal.pull-right
+          input.search-query.input-large(type='text', placeholder='County')
+          button.btn(type='submit')
+            i.i.fa.fa-search.fa-1x
+    .col-xs-3
+      form#custom-search-form.form-search.form-horizontal.pull-right
+          input.search-query.input-large(type='text', placeholder='Surname')
+          button.btn(type='submit')
+            i.i.fa.fa-search.fa-1x
+
+  .row
+  .col-xs-12
+    .container
+      .row.headings
+        div
+          .col-xs-2
+            h4 Surname
+          .col-xs-2
+            h4 First Name
+          .col-xs-2
+            h4 Town
+          .col-xs-2
+            h4 County
+          .col-xs-2
+            h4 Country
+          .col-xs-2
+            h4 Year
+
+
+  .col-xs-2
+    each result, i in resultsFromDB
+      ul
+        li #{result.Surname}
+
+
+  .col-xs-2
+    each result, i in resultsFromDB
+      ul
+        li #{result.FirstName}
+
+  .col-xs-2
+    each result, i in resultsFromDB
+      ul
+        li #{result.Town}
+
+  .col-xs-2
+    each result, i in resultsFromDB
+      ul
+        li #{result.County}
+
+  .col-xs-2
+    each result, i in resultsFromDB
+      ul
+        li #{result.Country}
+
+
+  .col-xs-2
+    each result, i in resultsFromDB
+      ul
+        li #{result.Year}
