@@ -16,21 +16,26 @@ const http = require('http');
 const port = normalizePort(process.env.PORT || '3000');
 var server;
 
-var fs = require('fs');
+var Datastore = require ('nedb');
+var db = new Datastore({filename: 'public/mendoDatabase/mendoPeopleList.json', corruptAlertThreshold: 1, autoload: true});
+db ={};
 
-const mongoClient = require('mongodb').MongoClient;
-const ObjectId = require('mongodb').ObjectID;
+
+//var fs = require('fs');
+
+//const mongoClient = require('mongodb').MongoClient;
+//const ObjectId = require('mongodb').ObjectID;
 
 //Tells our app that we want to talk to MongoDB.
-var mongo = require('mongodb');
-var monk = require('monk');
-var db = monk('mongodb://localhost:27017/mendoPeopleList');
+//var mongo = require('mongodb');
+//var monk = require('monk');
+//var db = monk('mongodb://localhost:27017/mendoPeopleList');
 
 // If I am running locally then use 'mongodb://localhost:27017/test' otherwise
 // look for the environment variable
-var url = process.env.CUSTOMCONNSTR_MongoDB || 'mongodb://localhost:27017/mendoPeopleList';
+//var url = process.env.CUSTOMCONNSTR_MongoDB || 'mongodb://localhost:27017/mendoPeopleList';
 
-mongoClient.connect(url, function(err, conn) {
+/*mongoClient.connect(url, function(err, conn) {
         if(err){
             console.log(err.message);
             throw err;
@@ -38,7 +43,7 @@ mongoClient.connect(url, function(err, conn) {
             console.log("Connected to DB");
             conn.close();
         }
-});
+});*/
 
 /*
  * Requiring the following package to be able to use sessions.

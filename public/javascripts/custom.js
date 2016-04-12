@@ -1,6 +1,7 @@
 $(document).ready(function(){
-  $(".searchRow").click(function(){
+  $(".moreInfoDiv").click(function(){
     $(".moreInfoDiv").toggle();
+    console.log("ready");
     });
   });
 

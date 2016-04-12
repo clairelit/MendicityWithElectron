@@ -106,11 +106,11 @@ block content
                 span #{person.country}
               .col-xs-2
                 span #{person.year}
-              hr.size=8
+              hr.noshade.size=8
               p.moreInfoDiv Year of Transmission - #{person.year} 
               p.moreInfoDiv Date of Transmission - #{person.date} 
               p.moreInfoDiv Transmission Granted? - #{person.transmission}
               p.moreInfoDiv #{person.moreInformation}
-              p.moreInfoDiv #{person.image}
-              hr.size=8
+              //img(src = #{"person.image"})
+              hr.noshade.size=8
               

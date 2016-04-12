@@ -50,11 +50,14 @@ html,body {
   background-image: url(/images/paper_background.jpg);
   font-weight: bold;
  }
+ 
 /*.moreInfoDiv{
   display: none;
 }*/
+
 span{
     color: #c19342;
+    font-size: 1.2em;
 }
 
  .fa{
@@ -108,28 +111,28 @@ span{
   width:50%;
   height:100%;
   float:left;
-  background-image:  url(/images/paper.jpg);
+  background-image:  url(/images/paper_background.jpg);
 }
 
 .quarterTrans{
   width:50%;
   height:100%;
   float:left;
-  background-image: url(/images/paper.jpg);
+  background-image: url(/images/paper_background.jpg);
 }
 
 .quarterSearch{
   width:50%;
   height:100%;
   float:left;
-  background-image: url(/images/paper.jpg);
+  background-image: url(/images/paper_background.jpg);
 }
 
 .quarterContact{
   width:50%;
   height:100%;
   float:left;
-  background-image: url(/images/paper.jpg);
+  background-image: url(/images/paper_background.jpg);
 }
 
 .contents{
