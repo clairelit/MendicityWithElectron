@@ -13,6 +13,8 @@ const assert = require('assert');
 const ObjectId = require('mongodb').ObjectID;
 const url = process.env.CUSTOMCONNSTR_MongoDB || 'mongodb://localhost:27017/test';
 
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('startscreen');
@@ -30,9 +32,12 @@ router.get('/searchpage', function(req, res, next) {
 
 
 router.post('/searchpage', function(req, res, next){
+    //var db = req.db;
+    //var collection = db.get('mendoPeopleList');
+    //db.mendoPeopleList.find({'county.'})
     var query = {};
     if (req.body.county) {
-        console.log(req.body.county);
+    console.log(req.body.county);
     query.county = req.body.county;
     //collection.find({"county":" "});
 }
