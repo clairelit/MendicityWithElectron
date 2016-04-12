@@ -1,40 +1,79 @@
 doctype html
 html
   head
-    title= title
+    title= Search
     link(rel='stylesheet', href='/font-awesome-4.5.0/css/font-awesome.min.css')
     meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
     link(rel='stylesheet', href='/stylesheets/bootstrap.css')
     link(rel='stylesheet', href='/stylesheets/bootstrap-theme.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type="text/javascript", src="/javascripts/custom.js")
+    script(type="text/javascript", src="/javascripts/jquery-1.12.2.min.js")
+
   body
   .row
-    .col-xs-8
+    .col-xs-3
       a(href='/homepage')
         i.fa.fa-home.homeIcon.fa-5x
-      .col-xs-4
+    .col-xs-9
+      h3 Browse people who were granted Transmission
   .row
+   form#custom-search-form.form-search.form-horizontal.pull-right(method='post', action = '/searchpage')
     .col-xs-3
-      form#custom-search-form.form-search.form-horizontal.pull-right
-          input.search-query.input-large(type='text', placeholder='Town')
-          button.btn(type='submit')
-            i.i.fa.fa-search.fa-1x
+      
+        select(name="county" ) County
+          option(value="all") County
+          option(value="antrim") Antrim
+          option(value="armagh") Armagh
+          option(value="carlow") Carlow
+          option(value="cavan") Cavan
+          option(value="clare") Clare
+          option(value="cork") Cork
+          option(value="derry") Derry
+          option(value="donegal") Donegal
+          option(value="dublin") Dublin
+          option(value="fermanagh") Fermanagh
+          option(value="galway") Galway
+          option(value="kerry") Kerry
+          option(value="kildare") Kildare
+          option(value="kilkenny") Kilkenny
+          option(value="laois") Laois
+          option(value="leitrim") Leitrim
+          option(value="limerick") Limerick
+          option(value="longford") Longford
+          option(value="louth") Louth
+          option(value="mayo") Mayo
+          option(value="meath") Meath
+          option(value="monaghan") Monaghan
+          option(value="offaly") Offaly
+          option(value="roscommon") Roscommon
+          option(value="sligo") Sligo
+          option(value="tipperary") Tipperary
+          option(value="tyrone") Tyrone
+          option(value="waterford") Waterford
+          option(value="westmeath") Westmeath
+          option(value="wexford") Wexford
+          option(value="wicklow") Wicklow
+         
+          
     .col-xs-3
-      form#custom-search-form.form-search.form-horizontal.pull-right
-          input.search-query.input-large(type='text', placeholder='Country')
-          button.btn(type='submit')
-            i.i.fa.fa-search.fa-1x
-    .col-xs-3
-      form#custom-search-form.form-search.form-horizontal.pull-right
-          input.search-query.input-large(type='text', placeholder='County')
-          button.btn(type='submit')
-            i.i.fa.fa-search.fa-1x
-    .col-xs-3
-      form#custom-search-form.form-search.form-horizontal.pull-right
-          input.search-query.input-large(type='text', placeholder='Surname')
-          button.btn(type='submit')
-            i.i.fa.fa-search.fa-1x
+      select(name="country") Country
+        option(value="all") Country
+        option(value="england") England
+        option(value="ireland") Ireland
+        option(value="poland") Poland
+        option(value="scotland") Scotland
+        option(value="usa") USA
+        option(value="wales") Wales
 
+    .col-xs-3
+      //select(name = "dropdown") Town
+        //option(value="arklow") Arklow
+
+    .col-xs-3
+      input.search-query.input-large(type='text',name='surname', placeholder='Surname')
+    
+    input(type='submit', value='submit', name='submit')
   .row
   .col-xs-12
     .container
@@ -42,46 +81,46 @@ html
         div
           .col-xs-2
             h4 Surname
+
           .col-xs-2
-            h4 First Name
+              h4 First Name
+
           .col-xs-2
-            h4 Town
+              h4 Town
+
           .col-xs-2
-            h4 County
+              h4 County
+
           .col-xs-2
-            h4 Country
+              h4 Country
+
           .col-xs-2
-            h4 Year
-
-
-  .col-xs-2
-    each result, i in resultsFromDB
-      ul
-        li #{result.Surname}
-
-
-  .col-xs-2
-    each result, i in resultsFromDB
-      ul
-        li #{result.FirstName}
-
-  .col-xs-2
-    each result, i in resultsFromDB
-      ul
-        li #{result.Town}
-
-  .col-xs-2
-    each result, i in resultsFromDB
-      ul
-        li #{result.County}
-
-  .col-xs-2
-    each result, i in resultsFromDB
-      ul
-        li #{result.Country}
-
-
-  .col-xs-2
-    each result, i in resultsFromDB
-      ul
-        li #{result.Year}
+              h4 Year
+            
+  .row
+  .col-xs-12
+    .container
+      .row.headings
+        div
+          for person, i in allPeople
+            .row.searchRow
+              .col-xs-2
+                span #{person.surname}
+              .col-xs-2
+                span #{person.firstName}
+              .col-xs-2
+                span #{person.town}
+              .col-xs-2
+                span #{person.county}
+              .col-xs-2
+                span #{person.country}
+              .col-xs-2
+                span #{person.year}
+              hr.size=8
+              p.moreInfoDiv Year of Transmission - #{person.year} 
+              p.moreInfoDiv Date of Transmission - #{person.date} 
+              p.moreInfoDiv Transmission Granted? - #{person.transmission}
+              p.moreInfoDiv #{person.moreInformation}
+              p.moreInfoDiv #{person.image}
+              hr.size=8
+              

@@ -1,0 +1,20 @@
+  .row
+  .col-xs-12
+    .container
+      .row.headings
+        div
+          for person, i in allPeople
+            .row.searchRow
+              .col-xs-2
+                span #{person.surname}
+              .col-xs-2
+                span #{person.firstName}
+              .col-xs-2
+                span #{person.town}
+              .col-xs-2
+                span #{person.county}
+              .col-xs-2
+                span #{person.country}
+              .col-xs-2
+                span #{person.year}
+              p.moreInfoDiv #{person.moreInformation}

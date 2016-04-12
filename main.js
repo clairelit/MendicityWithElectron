@@ -16,6 +16,10 @@ const http = require('http');
 const port = normalizePort(process.env.PORT || '3000');
 var server;
 
+var fs = require('fs');
+
+const mongoClient = require('mongodb').MongoClient;
+const ObjectId = require('mongodb').ObjectID;
 
 //Tells our app that we want to talk to MongoDB.
 var mongo = require('mongodb');
@@ -26,14 +30,27 @@ var db = monk('mongodb://localhost:27017/mendoPeopleList');
 // look for the environment variable
 var url = process.env.CUSTOMCONNSTR_MongoDB || 'mongodb://localhost:27017/mendoPeopleList';
 
+mongoClient.connect(url, function(err, conn) {
+        if(err){
+            console.log(err.message);
+            throw err;
+        } else {
+            console.log("Connected to DB");
+            conn.close();
+        }
+});
+
 /*
  * Requiring the following package to be able to use sessions.
  * Need sessions to be able to store user details
  */
 const session = require('express-session');
 
-
-
+//This makes the database accessible to the router
+expressApp.use(function(req, res, next){
+  req.db=db;
+  next();
+});
 
 
 function normalizePort(val) {
@@ -134,10 +151,10 @@ const expressSessionOptions = {
 expressApp.use(session(expressSessionOptions));
 
 //This makes the database accessible to the router
-expressApp.use(function(req, res, next){
+/*expressApp.use(function(req, res, next){
   req.db=db;
   next();
-});
+});*/
 
 //Anytime i get any kind of a request, use routes, which is the index.js file
 expressApp.use('/', routes);
