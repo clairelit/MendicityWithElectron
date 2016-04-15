@@ -1,7 +1,7 @@
 $(document).ready(function(){
-  $(".moreInfoDiv").click(function(){
-    $(".moreInfoDiv").toggle();
-    console.log("ready");
+  $(".searchRow").click(function(){
+    $(".moreInfoDiv").show();
+    console.log("document is ready");
     });
   });
 

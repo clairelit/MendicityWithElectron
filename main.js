@@ -17,9 +17,9 @@ const port = normalizePort(process.env.PORT || '3000');
 var server;
 
 var Datastore = require ('nedb');
-var db = new Datastore({filename: 'public/mendoDatabase/mendoPeopleList.json', corruptAlertThreshold: 1, autoload: true});
-db ={};
-
+var db = new Datastore({'mendoPeopleList': 'public/mendoDatabase/mendoPeopleList.json', corruptAlertThreshold: 1, autoload: true});
+//db ={};
+//var db = new Datastore({mendoPeopleList: 'public/mendoDatabase', corruptAlertThreshold: 1, autoload: true});
 
 //var fs = require('fs');
 
