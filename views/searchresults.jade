@@ -3,7 +3,7 @@ extends layout
 block content
   .row
     .col-xs-3
-      a(href='/seachpage')
+      a(href='/searchpage')
         i.fa.fa-home.homeIcon.fa-5x
     .col-xs-9
       h3 Browse people who were granted Transmission
@@ -12,7 +12,7 @@ block content
     .col-xs-3
       
         select(name="county" ) County
-          option(value="all") All
+          option(value="all") County
           option(value="antrim") Antrim
           option(value="armagh") Armagh
           option(value="carlow") Carlow
@@ -47,8 +47,8 @@ block content
          
           
     .col-xs-3
-      select(name = "dropdown") Country
-        option(value="all") All
+      select(name="country") Country
+        option(value="all") Country
         option(value="england") England
         option(value="ireland") Ireland
         option(value="poland") Poland
@@ -61,7 +61,7 @@ block content
         //option(value="arklow") Arklow
 
     .col-xs-3
-      input.search-query.input-large(type='text', placeholder='Surname')
+      input.search-query.input-large(type='text',name='surname', placeholder='Surname')
     
     input(type='submit', value='submit', name='submit')
   .row
@@ -86,7 +86,7 @@ block content
 
           .col-xs-2
               h4 Year
-
+            
   .row
   .col-xs-12
     .container
@@ -106,4 +106,11 @@ block content
                 span #{person.country}
               .col-xs-2
                 span #{person.year}
+              hr.noshade.size=8
+              p.moreInfoDiv Year of Transmission - #{person.year} 
+              p.moreInfoDiv Date of Transmission - #{person.date} 
+              p.moreInfoDiv Transmission Granted? - #{person.transmission}
               p.moreInfoDiv #{person.moreInformation}
+              //img(src = #{"person.image"})
+              hr.noshade.size=8
+              

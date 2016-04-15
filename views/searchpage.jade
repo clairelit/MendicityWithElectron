@@ -111,6 +111,8 @@ block content
               p.moreInfoDiv Date of Transmission - #{person.date} 
               p.moreInfoDiv Transmission Granted? - #{person.transmission}
               p.moreInfoDiv #{person.moreInformation}
-              //img(src = #{"person.image"})
-              hr.noshade.size=8
+              //img(src = {"person.photoLocation")  THis is giving me an image icon
+              //img(src =#{person.photoLocation}) This is giving me Unexpected token ILLEGAL
+              img(src = "person.photoLocation")
+             hr.noshade.size=8
               
