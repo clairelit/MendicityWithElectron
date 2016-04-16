@@ -15,7 +15,9 @@ const debug = require('debug')('express-test:server');
 const http = require('http');
 const port = normalizePort(process.env.PORT || '3000');
 var server;
-//window.$ = window.jQuery = require('./javascripts/jquery-1.12.1.min.js');
+
+
+//var window = window.$ = window.jQuery = require('./javascripts/jquery-1.12.1.min.js');
 //var jquery = require('jquery');
 //window.$ = require( '../js/jquery.js' ) ;
 

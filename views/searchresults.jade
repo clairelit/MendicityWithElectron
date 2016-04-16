@@ -8,7 +8,7 @@ block content
     .col-xs-9
       h3 Browse people who were granted Transmission
   .row
-   form#custom-search-form.form-search.form-horizontal.pull-right(method='post', action = '/searchpage')
+   form#custom-search-form.form-search.form-horizontal.pull-right(method='post', action = '/searchresults')
     .col-xs-3
       
         select(name="county" ) County
@@ -111,6 +111,6 @@ block content
               p.moreInfoDiv Date of Transmission - #{person.date} 
               p.moreInfoDiv Transmission Granted? - #{person.transmission}
               p.moreInfoDiv #{person.moreInformation}
-              //img(src = #{"person.image"})
+              img(src = #"person.photoLocation")
               hr.noshade.size=8
               

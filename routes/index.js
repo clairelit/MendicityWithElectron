@@ -3,7 +3,8 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 var path = require('path');
-window.$ = window.jQuery = require('./javascripts/jquery-1.12.1.min.js');
+
+//var window = window.$ = window.jQuery = require('./javascripts/jquery-1.12.1.min.js');
 
 const Datastore = require ('nedb');
 var mendoPeopleList = new Datastore({ filename:'public/mendoDatabase/mendoPeopleList.json', autoload: true});
@@ -23,12 +24,14 @@ router.get('/searchpage', function(req, res, next) {
 });
 
 
-router.post('/searchpag', function(req, res, next){
-    mendoPeopleList.find({county: { $exists: true}}, function (err, docs){
+router.post('/searchresults', function(req, res, next){
+    var county = (req.body.county);
+    var country = (req.body.country);
+   var myArray = mendoPeopleList.find({county: { $exists: true}}, function (err, docs){
         console.log('county');
-        res.render('searchresults');
+        res.render('searchresults', {peopleResults: myArray});
     });
-})
+});
 
 router.get('/whatismendicity', function(req, res, next) {
   res.render('whatismendicity');
