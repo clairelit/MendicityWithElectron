@@ -15,6 +15,9 @@ const debug = require('debug')('express-test:server');
 const http = require('http');
 const port = normalizePort(process.env.PORT || '3000');
 var server;
+//window.$ = window.jQuery = require('./javascripts/jquery-1.12.1.min.js');
+//var jquery = require('jquery');
+//window.$ = require( '../js/jquery.js' ) ;
 
 var Datastore = require ('nedb');
 var db = new Datastore({'mendoPeopleList': 'public/mendoDatabase/mendoPeopleList.json', corruptAlertThreshold: 1, autoload: true});
@@ -143,6 +146,7 @@ expressApp.use(cookieParser());
 expressApp.use(express.static(path.join(__dirname, 'public')));
 expressApp.use('/', routes);
 expressApp.set('port', port);
+
 
 
 //Including this to get sessions to work

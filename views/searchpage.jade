@@ -6,7 +6,7 @@ block content
       a(href='/homepage')
         i.fa.fa-home.homeIcon.fa-5x
     .col-xs-9
-      h3 Browse people who were granted Transmission
+      h3 Browse through Transmission Records
   .row
    form#custom-search-form.form-search.form-horizontal.pull-right(method='post', action = '/searchpage')
     .col-xs-3
@@ -111,8 +111,6 @@ block content
               p.moreInfoDiv Date of Transmission - #{person.date} 
               p.moreInfoDiv Transmission Granted? - #{person.transmission}
               p.moreInfoDiv #{person.moreInformation}
-              //img(src = {"person.photoLocation")  THis is giving me an image icon
-              //img(src =#{person.photoLocation}) This is giving me Unexpected token ILLEGAL
               img(src = "person.photoLocation")
-             hr.noshade.size=8
+              hr.noshade.size=8
               

@@ -1,3 +1,5 @@
+script(type='text/javascript', src='/javascripts/jquery-1.12.2.min.js')
+  script.
 $(document).ready(function(){
   $(".searchRow").click(function(){
     $(".moreInfoDiv").show();
