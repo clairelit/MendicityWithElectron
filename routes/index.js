@@ -24,14 +24,21 @@ router.get('/searchpage', function(req, res, next) {
 });
 
 
-router.post('/searchresults', function(req, res, next){
+router.post('/searchpage', function(req, res, next){
     var county = (req.body.county);
+    console.log(req.body.county);
     var country = (req.body.country);
-   var myArray = mendoPeopleList.find({county: { $exists: true}}, function (err, docs){
-        console.log('county');
-        res.render('searchresults', {peopleResults: myArray});
-    });
-});
+    var surname =(req.body.surname);
+     mendoPeopleList.find({county: { $exists: true}}, function (err, docs){
+        console.log(county);
+        console.log(country);
+        console.log(surname);
+      res.render('searchresults', {peopleResults: docs});
+    });  
+  });
+    
+    
+    
 
 router.get('/whatismendicity', function(req, res, next) {
   res.render('whatismendicity');
