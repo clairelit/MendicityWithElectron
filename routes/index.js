@@ -26,14 +26,14 @@ router.get('/searchpage', function(req, res, next) {
 
 router.post('/searchpage', function(req, res, next){
     var county = (req.body.county);
-    console.log(req.body.county);
+    //console.log(req.body.county);
     var country = (req.body.country);
     var surname =(req.body.surname);
-     mendoPeopleList.find({county: { $exists: true}}, function (err, docs){
+     mendoPeopleList.find({county:'county'}, function (err, docs){
         console.log(county);
         console.log(country);
         console.log(surname);
-      res.render('searchresults', {peopleResults: docs});
+      res.render('searchresults', {allPeople: docs});
     });  
   });
     

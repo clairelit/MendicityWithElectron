@@ -1,7 +1,7 @@
 'use strict';
 const electron = require('electron');
 const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
+const BrowserWindow = require('electron').BrowserWindow;
 
 const express = require('express');
 const path = require('path');
@@ -109,7 +109,7 @@ function onListening() {
   debug('Listening on ' + bind);
 
   mainWindow.loadURL('http://127.0.0.1:3000');
-  //mainWindow.toggleDevTools();
+  mainWindow.toggleDevTools();
 }
 
 var mainWindow = null;
