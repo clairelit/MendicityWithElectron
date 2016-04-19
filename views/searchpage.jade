@@ -107,10 +107,11 @@ block content
               .col-xs-2
                 span #{person.year}
               hr.noshade.size=8
-              p.moreInfoDiv Year of Transmission - #{person.year} 
-              p.moreInfoDiv Date of Transmission - #{person.date} 
-              p.moreInfoDiv Transmission Granted? - #{person.transmission}
-              p.moreInfoDiv #{person.moreInformation}
-              img(src = "#{person.photoLocation}")
-              hr.noshade.size=8
-              
+              div.hidden(style="display:none")
+                p.moreInfoDiv Year of Transmission - #{person.year} 
+                p.moreInfoDiv Date of Transmission - #{person.date} 
+                p.moreInfoDiv Transmission Granted? - #{person.transmission}
+                p.moreInfoDiv #{person.moreInformation}
+                img(src = "./images/"+person.photoLocation)
+                hr.noshade.size=8
+                
